@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>LISTA PRODUTOS</title>
+    </head>
+    <body>
+        <h1>LISTA DE PRODUTOS</h1>
+        <UL>
+            {% for produto in produtos %}
+               <a href="{% url 'editar_produto' produto.id %}">
+                    <li>{{ produto.nome }}, {{ produto.valor }}</li>
+               </a> 
+            {% endfor %}
+        </UL>
+        <a href="{% url 'novo_produto' %}">Novo Produto</a>
+    </body>
+</html>
